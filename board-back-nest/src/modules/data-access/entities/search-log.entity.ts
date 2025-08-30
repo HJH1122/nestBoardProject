@@ -14,7 +14,9 @@ export default class SearchLogEntity {
     searchWord: string;
 
     @Column({
-        name: 'relation_word'
+        name: 'relation_word',
+        type: 'varchar', // 'varchar' 또는 'text'로 설정
+        nullable: true
     })
     relationWord: string | null;
 

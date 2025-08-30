@@ -29,12 +29,16 @@ export default class UserEntity {
     address: string;
 
     @Column({
-        name: 'address_detail'
+        name: 'address_detail',
+        type: 'json', // JSON 타입으로 변경
+        nullable: true
     })
     addressDetail: string | null;
 
     @Column({
-        name: 'profile_image'
+        name: 'profile_image',
+        type: 'varchar', // 'varchar' 또는 'text' 등으로 설정
+        nullable: true
     })
     profileImage: string | null;
 
