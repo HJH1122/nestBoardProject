@@ -5,8 +5,8 @@ import { HttpExceptionFilter } from 'filter';
 import { ValidationPipe } from '@nestjs/common';
 import { validationPipeConfig } from 'config';
 
+config();
 async function bootstrap() {
-  config();
   const app = await NestFactory.create(AppModule);
 
   app.useGlobalFilters(new HttpExceptionFilter());
