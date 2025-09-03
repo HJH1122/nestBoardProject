@@ -51,6 +51,18 @@ export default class UserRepositoy {
         }
     }
 
+        async findByEmail(email: string): Promise<UserEntity | null>{
+        try{
+            const userEntity = await this.repository.findOne({ where: {email}});
+            return userEntity;
+
+        }catch(exception){
+            this.logger.error(exception.message);
+            ResponseDto.databaseError();
+            return null;
+        }
+    }
+
     async save(userEntity: UserEntity): Promise<UserEntity | null>{
         try{
             return await this.repository.save(userEntity);
